@@ -1,0 +1,98 @@
+
+# create a virtual environment
+$ py -m venv env
+
+# activate virtual environment
+$ source env/Scripts/activate
+
+
+# if pip freeze does not work
+
+(env)$pip install fabric
+#-----------------------------------
+Downloading/unpacking fabric
+  Downloading Fabric-1.6.1.tar.gz (216Kb): 216Kb downloaded
+  Running setup.py egg_info for package fabric
+...
+
+Successfully installed fabric paramiko pycrypto
+Cleaning up...
+#------------------------------------
+
+(env)$ pip freeze
+
+# install django
+(env)$ pip install django==3.1
+
+# now you have django commands
+# create a django project, the dot after the project name is to create the project in the current folder
+(env)$ django-admin startproject greatkart .
+
+
+# ---------------------------------------------------------------------------------------------------------------
+minor and mayor symbol
+> alt + 6, 2
+< alt + 6, 0
+
+1.
+1st Step - URLs pattern
+
+add:
++ bpath('', views.home, name='home')
+
+2.
+create views.py
+
+3.
+create templates folder and home.html
+
+4.
+create static folder and copy the files from the resources
+add STATIC_ROOT and STATICFILES_DIRS to settings.py
+
+5.
+
+# -------------------------------------------------------------------------------------------------------------------
+
+# collect static files
+$ py manage.py collectstatic
+
+
+# ---------------------------------------------------------------------------------------------------------------
+
+6.
+add static files to home, here we can add images, cess format and others
+<div class="intro-banner-wrap">
+	<img src="{% static 'images/banners/1.jpg' %}" class="img-fluid rounded">
+</div>
+
+7.
++ create home.html
++ create base.html
+
+8.
++ create includes folder
++ create footer.html
++ create navbar.html
+
+9.
++ call to navbar.html in base.html
+# -------------------------------------------------------------------------------------------------------------------
+
+$ manage.py startapp category
+
+# ---------------------------------------------------------------------------------------------------------------
+
+10.
++ add category app to settings.py
++ create models (for example Category)
++ register model in admin.py, so we will see categories in admin site: admin.site.register(Category)
+
+# -------------------------------------------------------------------------------------------------------------------
+
+$ manage.py startapp createsuperuser
+admin
+admin@admin.com
+admin
+
+# ---------------------------------------------------------------------------------------------------------------
