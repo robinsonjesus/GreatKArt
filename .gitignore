@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# own guide
+stepbystepguide.txt
+
 # C extensions
 *.so
 
