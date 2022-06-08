@@ -90,9 +90,46 @@ $ manage.py startapp category
 
 # -------------------------------------------------------------------------------------------------------------------
 
-$ manage.py startapp createsuperuser
+$ winpty manage.py createsuperuser
 admin
 admin@admin.com
 admin
 
 # ---------------------------------------------------------------------------------------------------------------
+
+# Fix the "Categorys" issue
+
+11.
+in models.py create class Meta inside Category class
+class Meta:
+verbose_name = 'category'
+verbose_name_plural = 'categories'
+
+# -------------------------------------------------------------------------------------------------------------------
+
+# custom users model
+$  py manage.py startapp accounts
+
++ models.py
++ fields, required fields
+
+# ---------------------------------------------------------------------------------------------------------------
+
+12.
++ models.py in accounts app
++ users and superuser model
+
+13.
++ add AUTH_USER_MODEL = 'accounts.Account' to settings.py
+
+14.
++ register Accounts in models.pyin accounts app
+
+15.
++ DELETE database >> refer to Udemy course, class 18, minute 20:00 for more information
+
+# ---------------------------------------------------------------------------------------------------------------
+
+admin
+admin@admin.com
+admin0000
